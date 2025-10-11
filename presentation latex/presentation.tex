@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, calc}
+\usepackage{fontawesome5} % For icons
 
 % Custom colors
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -177,34 +178,7 @@
   
   \vspace{1em}
   \begin{center}
-    \begin{tikzpicture}[
-        stage/.style={draw, rectangle, rounded corners, minimum width=2.5cm, minimum height=0.8cm, align=center, font=\small},
-        arrow/.style={-{Stealth[scale=1.2]}, thick, >=stealth}
-    ]
-
-    % Stages
-    \node[stage, fill=blue!20] (working) {Working\\Directory};
-    \node[stage, fill=green!20, right=1.5cm of working] (staging) {Staging\\Area};
-    \node[stage, fill=red!20, right=1.5cm of staging] (repo) {Repository};
-
-    % Arrows
-    \draw[arrow] (working) -- node[above] {\texttt{git add}} (staging);
-    \draw[arrow] (staging) -- node[above] {\texttt{git commit}} (repo);
-    \draw[arrow, bend right=30] (working) to node[below] {\texttt{git commit -a}} (repo);
-
-    \end{tikzpicture}
-  \end{center}
-
-  \vspace{0.5em}
-  \begin{center}
-    \begin{minipage}{0.9\textwidth}
-    \footnotesize
-    \begin{description}
-      \item[Working Directory] Your files on disk
-      \item[Staging Area] What will be committed
-      \item[Repository] Your committed snapshots
-    \end{description}
-    \end{minipage}
+    \includegraphics[width=0.5\textwidth]{figures/gitWorkflowDiagram.png}
   \end{center}
 \end{frame}
 
@@ -260,68 +234,36 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{Key Components}
         \begin{description}
-          \item[Repository] Your project's folder
-          \item[Commit] A saved "checkpoint"
-          \item[Branch] Parallel version
-          \item[Remote] Cloud version (GitHub)
+          \item[{\faFolderOpen\hspace{0.3em}Repository}] Your project's folder
+          \item[{\faSave\hspace{0.3em}Commit}] A saved "checkpoint"
+          \item[{\faCodeBranch\hspace{0.3em}Branch}] Parallel version
+          \item[{\faCloud\hspace{0.3em}Remote}] Cloud version (GitHub)
         \end{description}
       \end{block}
       
-      \begin{center}
-      \begin{tikzpicture}[
-          commit/.style={circle, draw, fill=blue!10, minimum size=0.7cm},
-          branch/.style={rectangle, draw, fill=green!10, rounded corners, minimum width=1.2cm, minimum height=0.6cm},
-          arrow/.style={-{Stealth[scale=1.2]}, thick, >=stealth},
-          node distance=0.8cm and 1.5cm
-      ]
+      \vspace{0.5em}
       
-      % Commits
-      \node[commit] (c1) {C1};
-      \node[commit, right=of c1] (c2) {C2};
-      \node[commit, right=of c2] (c3) {C3};
-      \node[commit, right=of c3] (c4) {C4};
-      \node[commit, above right=0.5cm and 1cm of c4] (c5) {C5};
-      \node[commit, right=of c5] (c6) {C6};
-      
-      % Branches
-      \node[branch, below=0.5cm of c3] (main) {main};
-      \node[branch, above right=0.2cm and 0.5cm of c6] (feature) {feature};
-      \node[branch, below=0.5cm of c6] (head) {HEAD};
-      
-      % Arrows between commits
-      \draw[arrow] (c1) -- (c2);
-      \draw[arrow] (c2) -- (c3);
-      \draw[arrow] (c3) -- (c4);
-      \draw[arrow] (c3) to [bend left=30] (c5);
-      \draw[arrow] (c5) -- (c6);
-      
-      % Branch pointers
-      \draw[arrow] (main) -- (c4);
-      \draw[arrow] (feature) -- (c6);
-      \draw[arrow] (head) -- (c6);
-      
-      % Labels
-      \node[text width=3cm, align=center, font=\tiny] at (3.5,-1.5) {Main branch};
-      \node[text width=3cm, align=center, font=\tiny] at (7.5,1.5) {Feature branch};
-      
-      \end{tikzpicture}
-      \end{center}
     \end{column}
     
     \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{Video Game Analogy}
+      \begin{exampleblock}{\faGamepad\hspace{0.5em}Video Game Analogy}
         \begin{itemize}
-          \item Commits = Save points
-          \item Branches = Story paths
-          \item Remote = Cloud save
+          \item {Commits = Save points}
+          \item {Branches = Story paths}
+          \item {Remote = Cloud save}
         \end{itemize}
       \end{exampleblock}
       
-      \vspace{1em}
+      \vspace{0.8em}
       
-      \begin{center}
-        [Space for workflow diagram]
-      \end{center}
+      \begin{block}{\faProjectDiagram\hspace{0.5em}Workflow}
+        \begin{enumerate}
+          \item {\faEdit\hspace{0.3em}Make changes}
+          \item {\faLayerGroup\hspace{0.3em}Stage changes}
+          \item {\faSave\hspace{0.3em}Commit changes}
+          \item {\faShareSquare\hspace{0.3em}Push to remote}
+        \end{enumerate}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
@@ -355,9 +297,6 @@
   \end{columns}
   
   \vspace{1em}
-  \begin{center}
-    [Space for workflow visualization]
-  \end{center}
 \end{frame}
 
 % Essential Git Commands - Part 1
@@ -513,38 +452,7 @@
   \end{block}
   
   \vspace{0.5cm}
-  \begin{tikzpicture}[
-      commit/.style={circle, draw, fill=blue!20, minimum size=0.7cm},
-      branch/.style={rectangle, draw, fill=green!20, minimum width=1.5cm, minimum height=0.7cm},
-      arrow/.style={->, >=stealth, thick}
-    ]
-    % Commits
-    \node[commit] (c1) at (0,0) {C1};
-    \node[commit] (c2) at (2,0) {C2};
-    \node[commit] (c3) at (4,0) {C3};
-    \node[commit] (c4) at (6,0) {C4};
-    \node[commit] (c5) at (6,1.5) {C5};
-    \node[commit] (c6) at (8,1.5) {C6};
-    
-    % Branches
-    \node[branch] (main) at (4,-1) {main};
-    \node[branch] (feature) at (8,2.5) {feature};
-    
-    % Arrows between commits
-    \draw[arrow] (c1) -- (c2);
-    \draw[arrow] (c2) -- (c3);
-    \draw[arrow] (c3) -- (c4);
-    \draw[arrow] (c3) -- (c5);
-    \draw[arrow] (c5) -- (c6);
-    
-    % Branch pointers
-    \draw[arrow] (main) -- (4,0);
-    \draw[arrow] (feature) -- (8,1.5);
-    
-    % Labels
-    \node[text width=3cm, align=center] at (3,-2) {Main development line};
-    \node[text width=3cm, align=center] at (7,3.5) {Feature branch};
-  \end{tikzpicture}
+  
 \end{frame}
 
 % Advanced Git - Part 1
@@ -553,7 +461,6 @@
     Git branches are independent lines of development that allow you to work on different features, fixes, or experiments without affecting the main codebase. They enable parallel development and help organize work efficiently.
   \end{block}
 
-  \vspace{0.5em}
   \begin{columns}
     \begin{column}{0.48\textwidth}
       \begin{block}{Branch Commands}
@@ -579,9 +486,7 @@
   \end{columns}
   
   \vspace{1em}
-  \begin{center}
-    [Space for branching diagram]
-  \end{center}
+
 \end{frame}
 
 % Advanced Git - Part 2
