@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760289373 "/home/houcine/test/git-and-github-course/presentation latex/presentation.tex" "presentation.pdf" "presentation" 1760289376 2
-  "/home/houcine/test/git-and-github-course/presentation latex/presentation.tex" 1760289368 15589 159a1aea009f20e178a2f65330b2c399 ""
+["pdflatex"] 1760293354 "/home/houcine/test/git-and-github-course/presentation latex/presentation.tex" "presentation.pdf" "presentation" 1760293359 2
+  "/home/houcine/test/git-and-github-course/presentation latex/presentation.tex" 1760293349 15932 912d22a2ac96ff4526138dd43d00986e ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1707391404 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1707391404 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1707391404 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
@@ -238,12 +238,12 @@
   "figures/gitGithub.png" 1760286918 44555 8579080b5740315bf5e3967f7f241cb0 ""
   "figures/gitWorkflowDiagram.png" 1760286918 15518 381b87e8a2c914188e7624a9d925ba62 ""
   "figures/mergeConflict.jpg" 1760228245 77331 1d183372f9dd35738de2f6d3323ff71f ""
-  "presentation.aux" 1760289376 5374 9fe3e538a7804bec42bbd06b22c25baa "pdflatex"
-  "presentation.nav" 1760289376 3274 38a8cb039b967cf2675cfb770121c613 "pdflatex"
-  "presentation.out" 1760289376 812 ea34f9ee1d8b331c547b3544bdf97907 "pdflatex"
-  "presentation.tex" 1760289368 15589 159a1aea009f20e178a2f65330b2c399 ""
-  "presentation.toc" 1760289376 267 b05d7d7f9e618acd50308084b116cda3 "pdflatex"
-  "presentation.vrb" 1760289376 881 ece7b8cac0b46d5846d4967a559492c3 "pdflatex"
+  "presentation.aux" 1760293359 5503 984eb08c416cef5f082a84a3e22f1d1d "pdflatex"
+  "presentation.nav" 1760293359 3367 a44b0f6d44174fccb5420289ae421127 "pdflatex"
+  "presentation.out" 1760293359 812 ea34f9ee1d8b331c547b3544bdf97907 "pdflatex"
+  "presentation.tex" 1760293349 15932 912d22a2ac96ff4526138dd43d00986e ""
+  "presentation.toc" 1760293359 267 3603981bd7fbea2a38526c5311871a06 "pdflatex"
+  "presentation.vrb" 1760293358 881 ece7b8cac0b46d5846d4967a559492c3 "pdflatex"
   (generated)
   "presentation.aux"
   "presentation.log"
