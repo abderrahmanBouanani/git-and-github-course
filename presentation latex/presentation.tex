@@ -49,7 +49,7 @@
 %==================================
 \title[Git \& GitHub]{\textbf{Mastering Git \& GitHub: From Zero to Collaboration}}
 \subtitle{A Comprehensive Hands-on Course}
-\author{Abderrahman Bouanani}
+\author{Abderrahman Bouanani \&\& Houcine Gahboub}
 \institute{ENSAA}
 \date{\today}
 
@@ -195,7 +195,6 @@
           \item[\texttt{git status -s}] Compact status view
           \item[\texttt{git log --oneline}] Compact log view
           \item[\texttt{git commit -am}] Add \& commit in one step
-          \item[\texttt{git diff}] See unstaged changes
         \end{description}
       \end{block}
     \end{column}
@@ -208,10 +207,10 @@
 \begin{frame}{Working with Branches}
 \begin{block}{Scenario 2: The "Works on My Machine" Problem}
 \begin{itemize}
-  \item Your program worked well enough yesterday
-  \item You made improvements last night...
-  \item ...but haven't gotten them to work yet
-  \item You need to turn in your program now
+  \item You want to add something new to your project,
+  \item but you're afraid this small change might break everything,
+  \item and you don't want to mess up the version that's already working well.
+  \item \alert{Branches to the rescue!}
 \end{itemize}
 \end{block}
 
@@ -228,8 +227,8 @@
       \begin{block}{Branch Commands}
         \begin{description}
           \item[\texttt{git branch}] List all branches
-          \item[\texttt{git branch <name>}] Create a new branch
-          \item[\texttt{git checkout <name>}] Switch branches
+          \item[\texttt{git switch  -c <name>}] Create a new branch
+          \item[\texttt{git switch <name>}] Switch branches
           \item[\texttt{git merge <name>}] Merge a branch
         \end{description}
       \end{block}
@@ -306,13 +305,7 @@
       \item Basic workflow: modify → stage → commit
     \end{itemize}
   \end{block}
-  
-  \begin{block}{Next Steps}
-    \begin{itemize}
-      \item Practice basic Git commands
-      \item Explore more Git features
-    \end{itemize}
-  \end{block}
+
 \end{frame}
 
 %--- Session 1 End / Session 2 Begin ---
