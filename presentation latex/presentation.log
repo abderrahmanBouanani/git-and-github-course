@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.24)  11 OCT 2025 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.24)  27 OCT 2025 13:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/admin/OneDrive/Bureau/formations/git&github/presentation latex/presentation.tex"
-(c:/Users/admin/OneDrive/Bureau/formations/git&github/presentation latex/presentation.tex
+**"c:/Users/admin/Desktop/formations/git&github/presentation latex/presentation.tex"
+(c:/Users/admin/Desktop/formations/git&github/presentation latex/presentation.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (C:\Users\admin\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
@@ -991,14 +991,14 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  30348 strings out of 468134
- 619208 string characters out of 5430740
+ 619120 string characters out of 5430740
  977610 words of memory out of 5000000
  58331 multiletter control sequences out of 15000+600000
  637893 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,461b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,123p,453b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (36 pages, 603148 bytes).
+Output written on presentation.pdf (36 pages, 603233 bytes).
 PDF statistics:
  1771 PDF objects out of 2073 (max. 8388607)
  77 named destinations out of 1000 (max. 500000)
