@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-President: Hajar Baais
-Vice President: Nassima Charite
-Secretary: Youssef Taguejgalet
-Treasurer: Reda Erraoui
-=======
 President: Reda Erraoui
 Vice President: Youssef Taguejgalet
 Secretary: Nassima Charite
 Treasurer: Hajar Baais
 
->>>>>>> newBranch
