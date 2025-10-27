@@ -1,4 +1,4 @@
 \beamer@sectionintoc {1}{Session 1: Version Control \& Git Fundamentals}{4}{0}{1}
-\beamer@sectionintoc {2}{Session 2: Advanced Git \& GitHub}{20}{0}{2}
-\beamer@sectionintoc {3}{Session 3: Collaboration on GitHub}{27}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{35}{0}{4}
+\beamer@sectionintoc {2}{Session 2: Collaboration on GitHub}{17}{0}{2}
+\beamer@sectionintoc {3}{Session 3: Common Git Problems}{24}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{25}{0}{4}

@@ -1,0 +1,20 @@
+\frametitle{Common Git Problems \& Fixes}
+\begin{block}{"I committed to the wrong branch!"}
+    \begin{itemize}
+        \item \textbf{Scenario:} Accidentally committed on `main` instead of your feature branch
+        \item \textbf{Fix:}
+        \begin{enumerate}
+            \item Create the correct branch: \verb|git branch feature-branch|
+            \item Reset main back one commit: \verb|git reset HEAD~ --hard|
+            \item Switch to your branch: \verb|git checkout feature-branch|
+            \item Commit is now safely on the correct branch
+        \end{enumerate}
+    \end{itemize}
+  \end{block}
+
+  \begin{alertblock}{"I need to undo my last commit!"}
+     \begin{itemize}
+         \item Keep changes but undo commit: \verb|git reset HEAD~|
+         \item Permanently delete last commit: \verb|git reset HEAD~ --hard| (caution!)
+     \end{itemize}
+  \end{alertblock}

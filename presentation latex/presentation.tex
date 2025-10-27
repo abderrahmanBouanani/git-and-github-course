@@ -1,47 +1,61 @@
 \documentclass[aspectratio=169]{beamer}
 
-\usetheme{Madrid}
-\usecolortheme{default}
+%==================================
+% THEME AND COLOR
+%==================================
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%==================================
+% PACKAGES
+%==================================
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, calc}
-\usepackage{fontawesome5} % For icons
+\usepackage{fontawesome5}
 
-% Custom colors
+%==================================
+% CUSTOMIZATION
+%==================================
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.97}
 
-% Code listing style
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    keepspaces=true,                 
-    numbers=left,                   
-    numbersep=5pt,                  
-    showspaces=false,               
+    breaklines=true,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                 
+    showtabs=false,
     tabsize=2
 }
 \lstset{style=mystyle}
 
+%==================================
+% TITLE INFORMATION
+%==================================
 \title[Git \& GitHub]{\textbf{Mastering Git \& GitHub: From Zero to Collaboration}}
 \subtitle{A Comprehensive Hands-on Course}
-\author{Abderrahman Bouanani}
+\author{Abderrahman Bouanani \&\& Houcine Gahboub}
 \institute{ENSAA}
 \date{\today}
 
+%==================================
+% DOCUMENT START
+%==================================
 \begin{document}
 
 \begin{frame}
@@ -52,7 +66,7 @@
   \begin{itemize}
     \item Understand version control concepts
     \item Master Git commands and workflows
-    \item Collaborate using GitHub
+    \item Collaborate effectively using GitHub
     \item Handle real-world scenarios
     \item Learn best practices and troubleshooting
   \end{itemize}
@@ -62,8 +76,9 @@
   \tableofcontents
 \end{frame}
 
-%==================================
+%=======================
 \section{Session 1: Version Control \& Git Fundamentals}
+%=======================
 
 \begin{frame}{Learning Objectives}
   \begin{columns}
@@ -74,7 +89,6 @@
           \item Set up and configure Git
           \item Create and manage repositories
           \item Track changes with commits
-          \item Navigate Git history
         \end{itemize}
       \end{block}
     \end{column}
@@ -84,87 +98,43 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Agenda}
-  \begin{itemize}
-    \item Introduction to Version Control
-    \item Git Installation \& Setup
-    \item Basic Git Commands
-    \item Hands-on Exercises
-  \end{itemize}
-  
-  \vspace{1em}
-  \begin{block}{Git Workflow}
-    Working Directory → Staging Area → Repository
-  \end{block}
-\end{frame}
-
-
 \begin{frame}{Why Version Control?}
-\begin{block}{Scenario 1: The "One Small Change" Problem}
+\begin{block}{Scenario: The "One Small Change" Problem}
 \begin{itemize}
-  \item Your program is working
-  \item You change "just one thing"
-  \item Your program breaks
-  \item You change it back
-  \item Your program is still broken!
-\end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}{Why Version Control? (cont.)}
-\begin{block}{Scenario 2: The "Works on My Machine" Problem}
-\begin{itemize}
-  \item Your program worked well enough yesterday
-  \item You made improvements last night...
-  \item ...but haven't gotten them to work yet
-  \item You need to turn in your program now
-\end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}{Version Control for Teams}
-\begin{block}{Scenario 3: The Integration Problem}
-\begin{itemize}
-  \item You change one part of a program -- it works
-  \item Your co-worker changes another part -- it works
-  \item You put them together -- it doesn't work
-  \item What changed? Which change broke what?
-\end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}{Version Control for Teams (cont.)}
-\begin{block}{Scenario 4: The Parallel Development Problem}
-\begin{itemize}
-  \item You make improvements to a class
-  \item Your co-worker makes different improvements to the same class
-  \item How do you merge these changes without losing work?
+  \item Your program is working perfectly.
+  \item You change "just one little thing"...
+  \item Your program breaks.
+  \item You try to change it back...
+  \item \alert{Your program is still broken!}
 \end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}{What is Version Control?}
   \begin{block}{A system that records changes to files over time}
-    Think of it like a time machine for your code!
+    Think of it as a \textbf{time machine} for your code!
   \end{block}
   
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{block}{Key Features}
         \begin{itemize}
-          \item \textbf{History}: See who changed what and when
-          \item \textbf{Backup}: Recover previous versions
-          \item \textbf{Collaboration}: Work together without conflicts
+          \item \textbf{History}: See who changed what and when.
+          \item \textbf{Backup}: Recover any previous version.
+          \item \textbf{Collaboration}: Work with others seamlessly.
         \end{itemize}
       \end{block}
     \end{column}
     \begin{column}{0.45\textwidth}
-      \begin{exampleblock}{Real-world Example}
-        Like "Track Changes" in Word, but much more powerful!
+      \begin{exampleblock}{Analogy}
+        Like "Track Changes" in a document, but supercharged for code.
       \end{exampleblock}
     \end{column}
   \end{columns}
 \end{frame}
+
+
+
 
 % Git Introduction
 \begin{frame}{What is Git?}
@@ -177,211 +147,154 @@
   \end{block}
   
   \vspace{1em}
-  \begin{center}
+  \begin{center} 
     \includegraphics[width=0.5\textwidth]{figures/gitWorkflowDiagram.png}
   \end{center}
 \end{frame}
 
-% Git Key Features
-\begin{frame}{Key Features of Git}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Core Capabilities}
-        \begin{itemize}
-          \item Complete project history
-          \item Offline functionality
-          \item Branching and merging
-          \item Data integrity
-        \end{itemize}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{center}
-        \includegraphics[width=0.5\textwidth]{figures/gitLogo.png}
-      \end{center}
-    \end{column}
-  \end{columns}
+
+%--- Core Git Concepts ---
+\begin{frame}{Core Git Concepts: The Three Areas}
+  \centering
+  \begin{tikzpicture}[
+    node distance=2cm,
+    area/.style={rectangle, draw, thick, rounded corners, minimum height=2cm, minimum width=3.5cm, text width=3cm, align=center},
+    arrow/.style={-Latex, thick}
+  ]
+    \node[area] (wd) {Working Directory};
+    \node[area, right=of wd] (sa) {Staging Area (Index)};
+    \node[area, right=of sa] (repo) {Repository (.git)};
+
+    \draw[arrow] ($(wd.east)+(0,0.3)$) -- node[above] {\texttt{git add}} ($(sa.west)+(0,0.3)$);
+    \draw[arrow] ($(sa.east)+(0,0.3)$) -- node[above] {\texttt{git commit}} ($(repo.west)+(0,0.3)$);
+  \end{tikzpicture}
+  \begin{itemize}
+      \item \textbf{Working Directory}: Files you actively modify.
+      \item \textbf{Staging Area}: Draft of your next commit.
+      \item \textbf{Repository}: Full history stored in .git.
+  \end{itemize}
 \end{frame}
 
-% Git Advantages
-\begin{frame}{Why Choose Git?}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Key Advantages}
-        \begin{itemize}
-          \item Distributed workflow
-          \item Fast performance
-          \item Strong community support
-          \item Cross-platform compatibility
-        \end{itemize}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{Fun Fact}
-        The name "Git" is British slang meaning "unpleasant person" - a playful joke by Linus Torvalds!
-      \end{exampleblock}
-      \vspace{0.5em}
-      \begin{alertblock}{Industry Standard}
-        Git has become the de facto standard for version control in software development.
-      \end{alertblock}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Core Git Concepts - Part 1
-\begin{frame}{Core Git Concepts: The Basics}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Key Components}
-        \begin{description}
-          \item[{\faFolderOpen\hspace{0.3em}Repository}] Your project's folder
-          \item[{\faSave\hspace{0.3em}Commit}] A saved "checkpoint"
-          \item[{\faCodeBranch\hspace{0.3em}Branch}] Parallel version
-          \item[{\faCloud\hspace{0.3em}Remote}] Cloud version (GitHub)
-        \end{description}
-      \end{block}
-      
-      \vspace{0.5em}
-      
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{\faGamepad\hspace{0.5em}Video Game Analogy}
-        \begin{itemize}
-          \item {Commits = Save points}
-          \item {Branches = Story paths}
-          \item {Remote = Cloud save}
-        \end{itemize}
-      \end{exampleblock}
-      
-      \vspace{0.8em}
-      
-      \begin{block}{\faProjectDiagram\hspace{0.5em}Workflow}
-        \begin{enumerate}
-          \item {\faEdit\hspace{0.3em}Make changes}
-          \item {\faLayerGroup\hspace{0.3em}Stage changes}
-          \item {\faSave\hspace{0.3em}Commit changes}
-          \item {\faShareSquare\hspace{0.3em}Push to remote}
-        \end{enumerate}
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Core Git Concepts - Part 2
-\begin{frame}{Git Workflow}
-  \begin{block}{Understanding Git Workflow}
-    Git's workflow is built around three main areas that help track and manage changes in your project. This structure ensures version control and collaboration efficiency.
-  \end{block}
-
-  \vspace{0.5em}
-  \begin{block}{The Basic Cycle}
-    \begin{enumerate}
-      \item Modify files in working directory
-      \item Stage changes \texttt{git add}
-      \item Commit changes \texttt{git commit}
-    \end{enumerate}
-  \end{block}
-  
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Working Directory}
-        Where you make changes to files
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Staging Area}
-        Preview of next commit
-      \end{block}
-    \end{column}
-  \end{columns}
-  
-  \vspace{1em}
-\end{frame}
-
-% Essential Git Commands - Part 1
-\begin{frame}{Essential Git Commands: Getting Started}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Repository Setup}
-        \begin{description}
-          \item[\texttt{git init}] Start new repo
-          \item[\texttt{git clone}] Copy existing repo
-          \item[\texttt{git status}] Check status
-        \end{description}
-      \end{block}
-      
-      \begin{center}
-        [Space for init/clone diagram]
-      \end{center}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{Example}
-        \small
-        \texttt{\textdollar{} git init}
-        
-        \texttt{\textdollar{} echo "\# My Project" > README.md}
-        
-        \texttt{\textdollar{} git add README.md}
-        
-        \texttt{\textdollar{} git commit -m "Initial commit"}
-      \end{exampleblock}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Essential Git Commands - Part 2
-\begin{frame}{Essential Git Commands: Daily Work}
+%--- Essential Git Commands ---
+\begin{frame}{Essential Git Commands}
   \begin{columns}
     \begin{column}{0.48\textwidth}
       \begin{block}{Basic Commands}
         \begin{description}
-          \item[\texttt{git add}] Stage changes
-          \item[\texttt{git commit}] Save changes
-          \item[\texttt{git log}] View history
-          \item[\texttt{git diff}] See changes
+          \item[\texttt{git init}] Initialize a new repository
+          \item[\texttt{git add}] Stage changes for commit
+          \item[\texttt{git commit}] Save changes to the repository
+          \item[\texttt{git log}] View the commit history
+          \item[\texttt{git status}] Check the status of your files
         \end{description}
       \end{block}
-      
-      \vspace{1em}
-      \begin{center}
-        [Space for command examples]
-      \end{center}
     \end{column}
-    
     \begin{column}{0.48\textwidth}
       \begin{block}{Useful Options}
         \begin{description}
-          \item[\texttt{git status -s}] Compact status
-          \item[\texttt{git log --oneline}] Compact log
-          \item[\texttt{git commit -am}] Add \& commit
+          \item[\texttt{git status -s}] Compact status view
+          \item[\texttt{git log --oneline}] Compact log view
+          \item[\texttt{git commit -am}] Add \& commit in one step
         \end{description}
       \end{block}
-      
-      \vspace{1em}
-      \begin{center}
-        [Space for more examples]
-      \end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Hands-on Exercise}
-  \begin{block}{Task: Create Your First Repository}
-    \begin{enumerate}
-      \item Create a new directory: \texttt{mkdir my-first-repo}
-      \item Navigate into it: \texttt{cd my-first-repo}
-      \item Initialize Git: \texttt{git init}
-      \item Create a README.md file with your project description
-      \item Stage the file: \texttt{git add README.md}
-      \item Commit your changes: \texttt{git commit -m "Initial commit"}
-    \end{enumerate}
+%--- Branches ---
+
+
+\begin{frame}{Working with Branches}
+\begin{block}{Scenario 2: The "Works on My Machine" Problem}
+\begin{itemize}
+  \item You want to add something new to your project,
+  \item but you're afraid this small change might break everything,
+  \item and you don't want to mess up the version that's already working well.
+  \item \alert{Branches to the rescue!}
+\end{itemize}
+\end{block}
+
+
+
+\end{frame}
+\begin{frame}{Working with Branches}
+  \begin{block}{What are Branches?}
+    Branches are independent lines of development. They let you work on features or fixes without affecting main.
   \end{block}
-  
-  \begin{alertblock}{Check Your Work}
-    Run \texttt{git status} to verify your changes are committed
-  \end{alertblock}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Branch Commands}
+        \begin{description}
+          \item[\texttt{git branch}] List all branches
+          \item[\texttt{git switch  -c <name>}] Create a new branch
+          \item[\texttt{git switch <name>}] Switch branches
+          \item[\texttt{git merge <name>}] Merge a branch
+        \end{description}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Branching Strategy}
+        \begin{itemize}
+          \item \textbf{main}: Production code
+          \item \textbf{develop}: Integration branch
+          \item \textbf{feature/*}: New features
+          \item \textbf{hotfix/*}: Urgent fixes
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+% (removed duplicate early merge-conflict slides; see consolidated version at end of Session 1)
+
+
+%--- Merge Conflicts (end of Session 1) ---
+\begin{frame}{Merge Conflicts}
+  \begin{center}
+  \includegraphics[width=0.7\textwidth,height=0.9\textheight]{figures/mergeConflict.jpg}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{How to Resolve Merge Conflicts}
+  \begin{block}{What is a Merge Conflict?}
+    Happens when Git cannot automatically merge because two branches edit the \textbf{same line} or one deletes a file the other modified.
+  \end{block}
+    
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{alertblock}{Step-by-Step Resolution}
+        \begin{enumerate}
+          \item Open the conflicted file(s)
+          \item Look for conflict markers:
+          \begin{itemize}
+            \item \texttt{<<<<<<< HEAD} (your changes)
+            \item \texttt{=======}
+            \item \texttt{>>>>>>> branch-name} (their changes)
+          \end{itemize}
+          \item Edit code to keep desired changes \& remove markers
+          \item Save the file
+          \item Stage the resolved file: \texttt{git add <file>}
+          \item Commit the merge: \texttt{git commit}
+        \end{enumerate}
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{exampleblock}{Example in a File}
+\begin{lstlisting}[language=css]
+/* style.css */
+.title {
+<<<<<<< HEAD
+  color: blue;
+=======
+  color: red;
+>>>>>>> feature-new-color
+}
+\end{lstlisting}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Key Takeaways}
@@ -392,37 +305,27 @@
       \item Basic workflow: modify → stage → commit
     \end{itemize}
   \end{block}
-  
-  \begin{block}{Next Steps}
-    \begin{itemize}
-      \item Practice basic Git commands
-      \item Explore more Git features
-      \item In the next session: Branching and Merging
-    \end{itemize}
-  \end{block}
+
 \end{frame}
 
-%==================================
-\section{Session 2: Advanced Git \& GitHub}
+%--- Session 1 End / Session 2 Begin ---
+\begin{frame}
+  \centering
+  \Huge{\textbf{End of Session 1}}\\[0.5em]
+  \large{Next: Session 2 — Collaboration on GitHub}
+\end{frame}
 
-% Session Objectives
+\begin{frame}
+  \centering
+  \Huge{\textbf{Session 2 Begins}}\\[0.5em]
+  \large{Collaboration on GitHub}
+\end{frame}
+
+% session 2 
+%=======================
+\section{Session 2: Collaboration on GitHub}
+%=======================
 \begin{frame}{Session 2: What You'll Learn}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Advanced Git}
-        \begin{itemize}
-          \item Branching and merging
-          \item Undoing changes
-          \item Using .gitignore
-        \end{itemize}
-      \end{block}
-      
-      \begin{center}
-        [Space for Git workflow diagram]
-      \end{center}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
       \begin{block}{GitHub Basics}
         \begin{itemize}
           \item Creating repositories
@@ -434,116 +337,26 @@
       \begin{center}
         [Space for GitHub screenshot]
       \end{center}
-    \end{column}
-  \end{columns}
 \end{frame}
 
-% What is Branching?
-\begin{frame}{What is Branching?}
-  \begin{block}{Parallel Universes for Your Code}
-    Branching allows you to create separate lines of development that can evolve independently.
-    
-    \begin{itemize}
-      \item \textbf{Isolation}: Work on features/fixes without affecting the main codebase
-      \item \textbf{Experimentation}: Try new ideas safely
-      \item \textbf{Collaboration}: Multiple people can work simultaneously
-      \item \textbf{Organization}: Keep different work streams separate
-    \end{itemize}
-  \end{block}
-  
-  \vspace{0.5cm}
-  
-\end{frame}
-
-% Advanced Git - Part 1
-\begin{frame}{Working with Branches}
-  \begin{block}{What are Git Branches?}
-    Git branches are independent lines of development that allow you to work on different features, fixes, or experiments without affecting the main codebase. They enable parallel development and help organize work efficiently.
-  \end{block}
-
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Branch Commands}
-        \begin{description}
-          \item[\texttt{git branch}] List branches
-          \item[\texttt{git branch <name>}] Create branch
-          \item[\texttt{git checkout <name>}] Switch branch
-          \item[\texttt{git merge <name>}] Merge branch
-        \end{description}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{Branching Strategy}
-        \begin{itemize}
-          \item Main/Master - Production code
-          \item Develop - Integration branch
-          \item Feature/* - New features
-          \item Hotfix/* - Quick fixes
-        \end{itemize}
-      \end{exampleblock}
-    \end{column}
-  \end{columns}
-  
-  \vspace{1em}
-
-\end{frame}
-
-% Advanced Git - Part 2
-\begin{frame}{Advanced Git: Undoing Changes}
-  \begin{block}{What is Undoing Changes?}
-    Git provides powerful tools to undo changes at different stages of your workflow. Understanding these tools helps you recover from mistakes and maintain a clean project history.
-  \end{block}
-
-  \vspace{0.5em}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Undo Commands}
-        \begin{description}
-          \item[\texttt{git restore <file>}] Discard changes
-          \item[\texttt{git revert <commit>}] Create undo commit
-          \item[\texttt{git reset}] Move branch pointer
-          \item[\texttt{git clean}] Remove untracked files
-        \end{description}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{alertblock}{Be Careful!}
-        Some commands modify history. 
-        \begin{itemize}
-          \item Use \texttt{revert} for shared branches
-          \item Use \texttt{reset} carefully on local branches
-        \end{itemize}
-      \end{alertblock}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% GitHub Introduction
 \begin{frame}{Introduction to GitHub}
   \begin{columns}
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.5\textwidth}
       \begin{block}{What is GitHub?}
         \begin{itemize}
-          \item Cloud-based Git hosting
-          \item Collaboration platform
-          \item Open source community hub
-          \item Professional portfolio
+          \item A cloud platform for hosting Git repositories
+          \item A hub for developer collaboration
+          \item The world's largest open-source community
+          \item A professional portfolio for your work
         \end{itemize}
       \end{block}
-      
-      \begin{center}
-        [GitHub features]
-      \end{center}
     \end{column}
-    
     \begin{column}{0.48\textwidth}
       \begin{block}{Key Features}
         \begin{itemize}
-          \item Code hosting
+          \item Code hosting \& version control
           \item Issue tracking
-          \item Pull requests
+          \item Pull Requests
           \item GitHub Actions (CI/CD)
           \item GitHub Pages
         \end{itemize}
@@ -552,305 +365,144 @@
   \end{columns}
 \end{frame}
 
-% Git + GitHub Workflow
-\begin{frame}{Git + GitHub Workflow}
-  \begin{block}{Basic Commands}
+\begin{frame}{The Git + GitHub Workflow}
+  \begin{block}{Essential Remote Commands}
     \begin{description}
-      \item[\texttt{git remote add origin <url>}] Connect to GitHub
-      \item[\texttt{git push -u origin main}] First push
-      \item[\texttt{git clone <url>}] Get existing repo
-      \item[\texttt{git pull}] Get latest changes
+      \item[\texttt{git clone <url>}] Download a repo from GitHub
+      \item[\texttt{git push}] Upload committed changes
+  \item[\texttt{git pull}] Download \& merge changes
+      \item[\texttt{git remote add origin <url>}] Connect local repo to GitHub
     \end{description}
   \end{block}
-  
-  \vspace{1em}
-  \begin{center}
-    [Workflow diagram: Local $\leftrightarrow$ GitHub]
-  \end{center}
-  
-  \begin{exampleblock}{Best Practice}
-    Always \texttt{pull} before you \texttt{push} to avoid conflicts!
-  \end{exampleblock}
-\end{frame}
 
-% Hands-on Exercise
-\begin{frame}{Hands-on: First GitHub Repository}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Steps}
-        \begin{enumerate}
-          \item Create GitHub account
-          \item New repository
-          \item Connect local repo
-          \item Push your code
-        \end{enumerate}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{center}
-        [Screenshot: GitHub new repo]
-        
-        \vspace{1em}
-        [Terminal: git commands]
-      \end{center}
-    \end{column}
-  \end{columns}
-  
-  \vspace{1em}
-  \begin{alertblock}{Remember}
-    Don't forget to add a meaningful README.md!
+  \begin{center}
+  \begin{tikzpicture}[
+    node distance=4cm,
+    local/.style={rectangle, draw, thick, rounded corners, minimum width=3cm, minimum height=2cm, label=above:\textbf{Your Computer}},
+    remote/.style={rectangle, draw, thick, rounded corners, minimum width=3cm, minimum height=2cm, label=above:\textbf{GitHub}},
+    arrow/.style={-Latex, thick}
+    ]
+    \node[local] (local) {Local Repo};
+    \node[remote, right=of local] (remote) {Remote Repo};
+
+    \draw[arrow] ($(local.east)+(0,0.3)$) -- node[above] {\texttt{git push}} ($(remote.west)+(0,0.3)$);
+    \draw[arrow] ($(remote.west)+(0,-0.3)$) -- node[below] {\texttt{git pull}} ($(local.east)+(0,-0.3)$);
+  \end{tikzpicture}
+  \end{center}
+
+  \begin{alertblock}{Golden Rule}
+    Always \texttt{git pull} before \texttt{git push} to avoid unnecessary conflicts!
   \end{alertblock}
 \end{frame}
 
-%==================================
-\section{Session 3: Collaboration on GitHub}
+%--- Session 2 content ---
 
-% Session 3 Overview
-\begin{frame}{Session 3: Team Collaboration}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{What We'll Cover}
-        \begin{itemize}
-          \item Forking repositories
-          \item Pull requests
-          \item Code reviews
-          \item Team workflows
-        \end{itemize}
-      \end{block}
-      
-      \begin{center}
-        [Collaboration diagram]
-      \end{center}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Key Benefits}
-        \begin{itemize}
-          \item Work in parallel
-          \item Review changes
-          \item Maintain code quality
-          \item Document decisions
-        \end{itemize}
-      \end{block}
-      
-      \begin{center}
-        [Team workflow]
-      \end{center}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Forking Workflow
-\begin{frame}{Forking Workflow}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Step 1: Fork}
-        \begin{enumerate}
-          \item Find a repository on GitHub
-          \item Click "Fork" button
-          \item Creates your copy
-        \end{enumerate}
-      \end{block}
-      
-      \begin{block}{Step 2: Clone}
-        \texttt{git clone <your-fork-url>}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{center}
-        [Fork button screenshot]
-        
-        \vspace{1em}
-        [Repository structure]
-      \end{center}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Pull Requests
-\begin{frame}{Pull Requests}
-  \begin{block}{What is a Pull Request?}
-    A way to propose and review changes before merging them into the main project.
-  \end{block}
-  
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Creating a PR}
-        \begin{enumerate}
-          \item Push changes to your fork
-          \item Click "New Pull Request"
-          \item Add description
-          \item Request reviews
-        \end{enumerate}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{center}
-        [PR creation flow]
-        
-        \vspace{1em}
-        [Good PR example]
-      \end{center}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% Code Reviews
 \begin{frame}{Code Reviews}
   \begin{columns}
     \begin{column}{0.48\textwidth}
-      \begin{block}{Reviewing Code}
+      \begin{block}{Reviewing Code: What to Look For}
         \begin{itemize}
-          \item Check for bugs and edge cases
-          \item Verify code style and best practices
-          \item Suggest improvements
-          \item Ensure tests are present
+          \item Bugs and edge cases
+          \item Adherence to code style
+          \item Opportunities for improvement
+          \item Presence of tests
+          \item Clear documentation
         \end{itemize}
       \end{block}
-      
-      \begin{exampleblock}{Example Review}
-        \begin{itemize}
-          \item "Consider adding error handling here"
-          \item "This could be more efficient if..."
-          \item "Don't forget to update the docs"
-        \end{itemize}
-      \end{exampleblock}
     \end{column}
-    
+
     \begin{column}{0.48\textwidth}
-      \begin{block}{Best Practices}
+      \begin{exampleblock}{Giving Good Feedback}
         \begin{itemize}
           \item Be constructive and kind
           \item Explain the 'why' behind suggestions
-          \item Keep reviews focused and actionable
-          \item Review in a timely manner
+          \item Ask questions instead of making demands
+          \item Offer help if needed
         \end{itemize}
-      \end{block}
-      
-      \begin{center}
-        [Code review interface]
-      \end{center}
+      \end{exampleblock}
     \end{column}
   \end{columns}
 \end{frame}
 
-% GitHub Features
-\begin{frame}{GitHub Features for Teams}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}
-      \begin{block}{Project Management}
-        \begin{description}
-          \item[Issues] Track bugs and features
-          \item[Projects] Kanban-style boards
-          \item[Discussions] Team conversations
-          \item[Wiki] Project documentation
-        \end{description}
+\begin{frame}{Pull Requests (PRs)}
+  \begin{block}{What is a Pull Request?}
+    A way to propose and discuss changes before merging them into the main project. PRs are the heart of collaboration on GitHub.
+  \end{block}
+
+      \begin{block}{The PR Workflow}
+        \begin{enumerate}
+          \item Push your feature branch to GitHub
+          \item Click "New Pull Request" on GitHub
+          \item Describe your changes clearly
+          \item Request reviews from teammates
+          \item Discuss, make more changes if needed
+          \item Merge!
+        \end{enumerate}
       \end{block}
-      
-      \begin{block}{Automation}
-        \begin{itemize}
-          \item GitHub Actions (CI/CD)
-          \item Branch protection rules
-          \item Auto-merge PRs
-          \item Code scanning
-        \end{itemize}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.5\textwidth}
-      \begin{center}
-        [GitHub features overview]
-        
-        \vspace{1em}
-        \begin{exampleblock}{Team Workflow}
-          \begin{enumerate}
-            \item Create issue
-            \item Branch off main
-            \item Make changes
-            \item Open PR
-            \item Review and discuss
-            \item Merge and deploy
-          \end{enumerate}
-        \end{exampleblock}
-        
-        \vspace{1em}
-        [Workflow visualization]
-      \end{center}
-    \end{column}
-  \end{columns}
+   
 \end{frame}
 
-% GitHub Features Table
-\begin{frame}{GitHub Features Overview}
-  \begin{center}
-    \begin{tabular}{ll}
-      \textbf{Feature} & \textbf{Description} \\ \hline
-      Issues & Track bugs and features \\
-      Pull Requests & Suggest and review code changes \\
-      Actions & Automate tasks (CI/CD) \\
-      Wiki & Project documentation \\
-      Projects & Kanban-style task management \\
-      Discussions & Team conversations \\
-      Security & Vulnerability alerts and Dependabot
-    \end{tabular}
-  \end{center}
+%--- Session 2 End / Session 3 Begin ---
+\begin{frame}
+  \centering
+  \Huge{\textbf{End of Session 2}}\\[0.5em]
+  \large{Next: Session 3 — Common Git Problems}
 \end{frame}
 
-\begin{frame}{Open Source and Team Projects}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Benefits}
-        \begin{itemize}
-          \item Build a public portfolio
-          \item Learn from other developers
-          \item Contribute to tools you use
-          \item Improve coding skills
-        \end{itemize}
-      \end{block}
-    \end{column}
-    
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Best Practices}
-        \begin{itemize}
-          
-          \item Use branches and PRs to avoid conflicts
-          \item Communicate through Issues and Discussions
-          \item Follow the project's contribution guidelines
-          \item Keep changes focused and well-documented
-        \end{itemize}
-      \end{block}
-    \end{column}
-  \end{columns}
+\begin{frame}
+  \centering
+  \Huge{\textbf{Session 3 Begins}}\\[0.5em]
+  \large{Common Git Problems}
 \end{frame}
 
-\begin{frame}{Practice Idea}
-\begin{itemize}
-  \item Work in pairs
-  \item One creates a repository, the other forks it
-  \item Collaborate using pull requests and issues
-\end{itemize}
+%=======================
+\section{Session 3: Common Git Problems}
+%=======================
+
+\begin{frame}[fragile]{Common Git Problems \& Fixes}
+  \begin{block}{"I committed to the wrong branch!"}
+    \begin{itemize}
+        \item \textbf{Scenario:} Accidentally committed on `main` instead of your feature branch
+        \item \textbf{Fix:}
+        \begin{enumerate}
+            \item Create the correct branch: \verb|git branch feature-branch|
+            \item Reset main back one commit: \verb|git reset HEAD~ --hard|
+            \item Switch to your branch: \verb|git checkout feature-branch|
+            \item Commit is now safely on the correct branch
+        \end{enumerate}
+    \end{itemize}
+  \end{block}
+
+  \begin{alertblock}{"I need to undo my last commit!"}
+     \begin{itemize}
+         \item Keep changes but undo commit: \verb|git reset HEAD~|
+         \item Permanently delete last commit: \verb|git reset HEAD~ --hard| (caution!)
+     \end{itemize}
+  \end{alertblock}
 \end{frame}
 
-%==================================
+
+%=======================
 \section{Conclusion}
+%=======================
 
-\begin{frame}{Conclusion}
-\begin{itemize}
-  \item You learned what version control is
-  \item You mastered Git basics and advanced commands
-  \item You discovered GitHub collaboration tools
-\end{itemize}
+\begin{frame}{Conclusion \& Next Steps}
+    \begin{block}{What You've Learned}
+        \begin{itemize}
+            \item Git fundamentals \& version control
+            \item Using branches for parallel development
+            \item Collaborating on GitHub via Pull Requests
+            \item Handling merge conflicts \& common issues
+        \end{itemize}
+    \end{block}
 
-\bigskip
-\textbf{Next Steps:}
-\begin{itemize}
-  \item Practice Git commands every day
-  \item Build your portfolio on GitHub
-  \item Contribute to open-source projects
-\end{itemize}
+    \begin{exampleblock}{Your Journey Forward}
+        \begin{itemize}
+            \item Practice Git commands daily
+            \item Start a personal project on GitHub
+            \item Contribute to open-source projects
+        \end{itemize}
+    \end{exampleblock}
 \end{frame}
 
 \begin{frame}
