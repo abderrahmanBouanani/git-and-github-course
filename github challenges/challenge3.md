@@ -1,4 +1,4 @@
-## 🔀 Challenge 3 — Work with Pull Requests (PRs)
+## Challenge 3 — Work with Pull Requests (PRs)
 
 **Goal:** Learn to contribute safely to someone else’s project using a fork and pull request.
 
