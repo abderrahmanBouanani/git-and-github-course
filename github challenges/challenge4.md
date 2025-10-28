@@ -1,4 +1,4 @@
-## Challenge 3 — Work with Pull Requests (PRs)
+## Challenge 4 — Work with Pull Requests in Open Source Projects (PRs)
 
 **Goal:** Learn to contribute safely to someone else’s project using a fork and pull request.
 
@@ -27,7 +27,7 @@
 
 ## 🏁 Completion
 
-Once you’ve done all three challenges:
+Once you’ve done all four challenges:
 
 * You’ll know how to use GitHub for your own projects.
 * You’ll understand how to collaborate on shared repos.
